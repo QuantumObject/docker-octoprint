@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec octoprint >>/var/log/octoprint.log 2>&1
+exec octoprint --iknowwhatimdoing  >>/var/log/octoprint.log 2>&1
