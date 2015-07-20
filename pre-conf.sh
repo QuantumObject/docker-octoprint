@@ -6,6 +6,3 @@ cd OctoPrint
 pip install -r requirements.txt
 python setup.py install 
 
-
-#usermod -a -G tty octoprint
-#usermod -a -G dialout octoprint
