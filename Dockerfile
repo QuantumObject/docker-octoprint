@@ -19,6 +19,10 @@ RUN chmod +x /etc/my_init.d/startup.sh
 
 
 ##Adding Deamons to containers
+# to add octoprint deamon to runit
+RUN mkdir /etc/service/octoprint
+COPY octoprint.sh /etc/service/octoprint/run
+RUN chmod +x /etc/service/octoprint/run
 
 #pre-config scritp for different service that need to be run when container image is create 
 #maybe include additional software that need to be installed ... with some service running ... like example mysqld
