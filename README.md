@@ -29,7 +29,7 @@ Check port and point your browser to http://[ip]:xxxx/  to initially configure y
 
 ## More Info
 
-About octoprint[http://octoprint.org/][1]
+About octoprint [octoprint.org][1]
 
 To help improve this container [quantumobject/docker-octoprint][5]
 
