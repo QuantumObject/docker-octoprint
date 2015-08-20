@@ -1,6 +1,6 @@
 #name of container: docker-octoprint
-#versison of container: 0.0.1
-FROM quantumobject/docker-baseimage
+#versison of container: 0.1.1
+FROM angelrr7702/docker-baseimage
 MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
 #add repository and update the container
@@ -40,9 +40,6 @@ VOLUME /var/backups
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
 EXPOSE 5000
-
-#creatian of volume 
-#VOLUME 
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
