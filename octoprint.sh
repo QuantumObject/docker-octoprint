@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec octoprint --iknowwhatimdoing  >>/var/log/octoprint.log 2>&1
+exec chpst -u root octoprint --iknowwhatimdoing 2>&1
