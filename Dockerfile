@@ -1,5 +1,5 @@
 #name of container: docker-octoprint
-#versison of container: 0.2.1
+#versison of container: 0.2.2
 FROM quantumobject/docker-baseimage:15.10
 MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
@@ -17,25 +17,21 @@ RUN mkdir -p /etc/my_init.d
 COPY startup.sh /etc/my_init.d/startup.sh
 RUN chmod +x /etc/my_init.d/startup.sh
 
-
 ##Adding Deamons to containers
 # to add octoprint deamon to runit
-RUN mkdir /etc/service/octoprint
+RUN mkdir -p /etc/service/octoprint /var/log/octoprint ; sync
+RUN mkdir -p octoprint-log.sh /etc/service/octoprint/log/run
 COPY octoprint.sh /etc/service/octoprint/run
-RUN chmod +x /etc/service/octoprint/run
+RUN chmod +x /etc/service/octoprint/run /etc/service/octoprint/log/run \
+    && cp /var/log/cron/config /var/log/octoprint/ \
+    && chown -R www-data /var/log/octoprint
 
 #pre-config scritp for different service that need to be run when container image is create 
 #maybe include additional software that need to be installed ... with some service running ... like example mysqld
 COPY pre-conf.sh /sbin/pre-conf
-RUN chmod +x /sbin/pre-conf \
+RUN chmod +x /sbin/pre-conf; sync \
     && /bin/bash -c /sbin/pre-conf \
     && rm /sbin/pre-conf
-
-##scritp that can be running from the outside using docker-bash tool ...
-## for example to create backup for database with convitation of VOLUME   dockers-bash container_ID backup_mysql
-COPY backup.sh /sbin/backup
-RUN chmod +x /sbin/backup
-VOLUME /var/backups
 
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
