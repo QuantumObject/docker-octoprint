@@ -1,5 +1,5 @@
 #name of container: docker-octoprint
-#versison of container: 0.2.2
+#versison of container: 0.3.1
 FROM quantumobject/docker-baseimage:15.10
 MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
@@ -20,10 +20,8 @@ RUN chmod +x /etc/my_init.d/startup.sh
 ##Adding Deamons to containers
 # to add octoprint deamon to runit
 RUN mkdir -p /etc/service/octoprint /var/log/octoprint ; sync
-RUN mkdir -p /etc/service/octoprint/log
-COPY octoprint-log.sh /etc/service/octoprint/log/run
 COPY octoprint.sh /etc/service/octoprint/run
-RUN chmod +x /etc/service/octoprint/run /etc/service/octoprint/log/run \
+RUN chmod +x /etc/service/octoprint/run \
     && cp /var/log/cron/config /var/log/octoprint/ \
     && chown -R www-data /var/log/octoprint
 
