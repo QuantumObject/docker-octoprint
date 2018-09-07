@@ -10,7 +10,7 @@ note: this container is not design for RaspberryPi but in case you want to used 
 
   - [Docker][2]
 
-To install docker in Ubuntu 16.04 use the commands:
+To install docker in Ubuntu 18.04 use the commands:
 
     $ sudo apt-get update
     $ sudo wget -qO- https://get.docker.com/ | sh
@@ -26,6 +26,8 @@ To run container use the command below:
 note: maybe /dev/ttyS0 need to change to your computer serial port and maybe need to add -–device=/dev/video0:/dev/video0 if want to have a camera checking what the printer is doing. (/dev/video0 maybe will be not the same for your system), in some situation can be used -v options (VOLUME).
 
 Check port and point your browser to http://[ip]:xxxx/  to initially configure your OctoPrint.
+
+Path for CureEngine configuration :  /opt/CuraEngine/build/./CuraEngine
 
 note: deploy this container behind proxy with SSL for extra security:
 

@@ -1,6 +1,6 @@
 #name of container: docker-octoprint
 #versison of container: 0.3.4
-FROM quantumobject/docker-baseimage:16.04
+FROM quantumobject/docker-baseimage:18.04
 MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
 #add repository and update the container
