@@ -8,7 +8,7 @@ pip install -r requirements.txt
 python setup.py install 
 
 # installing CuraEngine
-cd opt/
+cd /opt/
 git clone -b legacy https://github.com/Ultimaker/CuraEngine.git
 cd CuraEngine/
 make
