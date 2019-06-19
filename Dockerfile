@@ -1,5 +1,5 @@
 #name of container: docker-octoprint
-#versison of container: 0.3.4
+#versison of container: 0.4.1
 FROM quantumobject/docker-baseimage:18.04
 MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
