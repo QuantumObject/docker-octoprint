@@ -27,7 +27,11 @@ note: maybe /dev/ttyS0 need to change to your computer serial port and maybe nee
 
 Check port and point your browser to http://[ip]:xxxx/  to initially configure your OctoPrint.
 
-Path for CureEngine configuration :  /opt/CuraEngine/build/./CuraEngine
+## Cure Engine
+
+From Version 1.3.11 Cure Engine was move to plugin repository (CuraEngine Legacy), after installing it , need to restart the container :  docker restart container_id    
+
+  Path for CureEngine configuration :  /opt/CuraEngine/build/./CuraEngine
 
 note: deploy this container behind proxy with SSL for extra security:
 
