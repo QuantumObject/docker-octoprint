@@ -12,8 +12,8 @@ note: this container is not design for RaspberryPi but in case you want to used 
 
 To install docker in Ubuntu 18.04 use the commands:
 
-    $ sudo apt-get update
-    $ sudo wget -qO- https://get.docker.com/ | sh
+    sudo apt-get update
+    sudo wget -qO- https://get.docker.com/ | sh
 
  To install docker in other operating systems check [docker online documentation][4]
 
@@ -21,17 +21,19 @@ To install docker in Ubuntu 18.04 use the commands:
 
 To run container use the command below:
 
-    $ docker run -d -p xxxx:5000 --device=/dev/ttyS0:/dev/ttyS0 quantumobject/docker-octoprint
+    docker run -d -p 5000:5000 --device=/dev/ttyS0:/dev/ttyS0 --name octoprint quantumobject/docker-octoprint
 
 note: maybe /dev/ttyS0 need to change to your computer serial port and maybe need to add -–device=/dev/video0:/dev/video0 if want to have a camera checking what the printer is doing. (/dev/video0 maybe will be not the same for your system), in some situation can be used -v options (VOLUME).
 
-Check port and point your browser to http://[ip]:xxxx/  to initially configure your OctoPrint.
+Check port and point your browser to http://[ip]:5000/  to initially configure your OctoPrint.
 
 ## Cure Engine
 
 From Version 1.3.11 Cure Engine was move to plugin repository (CuraEngine Legacy), after installing it , need to restart the container :  docker restart container_id    
 
   Path for CureEngine configuration :  /opt/CuraEngine/build/./CuraEngine
+
+Check https://plugins.octoprint.org/plugins/curalegacy/ for additional info relate configuring CuraEngine
 
 note: deploy this container behind proxy with SSL for extra security:
 
