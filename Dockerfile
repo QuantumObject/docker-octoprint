@@ -5,7 +5,7 @@ MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
 #add repository and update the container
 #Installation of nesesary package/software for this containers...
-RUN apt-get update && apt-get install -y -q --no-install-recommends python-pip python-dev git \
+RUN apt-get update && apt-get install -y -q --no-install-recommends python-pip python-dev git python-setuptools \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
